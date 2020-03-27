@@ -14,6 +14,7 @@ class IncidentController{
     .join("ongs", "ongs.id", "=", "incidents.ong_id")
     .limit(5)
     .offset((page - 1) * 5)
+    .orderBy('id', 'desc')
     .select(["incidents.*",
     "ongs.name",
     "ongs.email",
